@@ -1,0 +1,131 @@
+drop  table stocks;
+drop  table etf;
+drop table myasset;
+drop table outlaytable
+drop table imcometable;
+drop table bbs;
+drop table members;
+drop table reply;
+
+create table stocks(
+    code varchar2(10)  primary key,
+	name varchar2(50),
+	price number(20),
+    last_update date,
+	day_range number(10),
+	day_change float(10),
+	EPS number(7),
+	PER float(5),
+	fwd_EPS number(7),
+	fwd_PER float(7),
+	BPS  number(10),
+	PBR float(7),
+	dividend number(10),
+	dividend_yield float(7),	
+    market_type varchar2(10)
+);
+
+
+
+
+create table etf(
+    code varchar2(10)  primary key,
+	name varchar2(100),
+	price number(20),
+    last_update date,
+	day_range number(10),
+	day_change number(10),
+	NAV number(20),
+	open number(10),
+	high number(10),
+	low number(10),
+    volume number(10),
+    tradeAMT number(20),
+	marketCap number(20),
+	netAsset number(20),
+	qty number(20),
+	indexName varchar2(100),
+	closeIndex number(10),
+	rangeIndex  number(5),
+	changeIndex number(5)
+    );
+    
+
+create table myasset(
+	userid varchar2(20),
+	code varchar2(6),
+	name varchar2(30),
+	price nmber(20),
+	last_update date,
+	qty number(10),
+	tot_amt number(20)
+
+);
+
+create table outlaytable( 
+    id varchar2(20),
+    num number, 
+    use1 varchar2(50),
+    cash number,
+    card number,
+    used_disposal varchar(20),
+    date1 varchar2(20),
+    memo1 varchar2(200),
+    constraint outlay_pk primary key(id, num)
+);
+
+
+create table incometable(
+    id varchar2(20),
+    num number,
+    use2 varchar2(50),
+    amount number,
+    bankbook varchar(20),
+    import_disposal varchar2(20),
+    date2 varchar2(20),
+    memo2 varchar2(200),
+    constraint income_pk primary key(id, num)
+);
+
+create table members(
+    name    varchar2(10),
+    id  varchar2(10),
+    pw     varchar2(10),
+    pay    NUMBER(2),
+    phone1   char(3),
+    phone2   char(4),
+    phone3   char(4),
+    email   varchar2(20),
+    gender NUMBER(2),
+    admin   NUMBER(2) default 0,
+    primary key(id)
+);
+
+create table reply(
+   code    NUMBER(5) ,
+   comment_code number(5),
+   id varchar2(10),
+    content varchar2(1000),
+    reg_date date,
+    primary key(comment_code)
+);
+
+
+
+create table bbs(
+   code    NUMBER(5) ,
+   id varchar2(10),
+    title varchar2(50),
+    pictureurl varchar2(1000),
+    content varchar2(1000),
+    reg_date date,
+    primary key(code)
+);
+
+insert into members values('admin','admin','admin',1,010,1234,1234,'1234@mail.com',1,0);
+
+DROP SEQUENCE reply_seq ;
+DROP SEQUENCE bbs_seq ;
+CREATE SEQUENCE bbs_seq start with 1 increment by 1;
+CREATE SEQUENCE reply_seq start with 1 increment by 1;
+commit;
