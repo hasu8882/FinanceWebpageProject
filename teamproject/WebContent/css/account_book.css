@@ -1,0 +1,73 @@
+.btn-floating {
+    color: #fff;
+    padding: 0;
+    width: 55.5px; height: 55.5px;
+    display: inline-block;
+    outline: 0;
+    border: none;
+    text-decoration: none;
+    background: #2196F3;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.btn-floating:hover {
+    background: #42A5F5;
+}
+.btn-floating div {
+    font-size: 1.8em;
+    padding: 0;
+    margin: .8rem 0 0 0;
+}
+/* 탭 메뉴 */
+.tab_item:target {
+	display:block;
+ }
+ .tab_item:not(:target) {
+   	display:none;
+}        
+    
+ header {
+    height: 80px; 
+    background-color:ghostwhite;    
+    color:black ;
+    text-align: center;    
+}
+
+.content {
+    height: 450px; 
+    background-color: aliceblue;
+    display: flex;    
+}
+
+.content1 {  
+    flex: 50%;
+    background-color: azure;
+}
+
+.content2 {
+    flex: 50%;
+    background-color: aliceblue;    
+    text-align: center;
+}
+
+.content3 {
+    flex: 50%;
+    background-color: seashell;    
+    text-align: center;
+}
+
+.content4 {
+	height: 500px; 
+	background-color: honeydew;
+}
+
+section {
+	text-align: center;
+}
+
+.tb {
+	font-size: 30px;
+	color: gray;
+}
+
